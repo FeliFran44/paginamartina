@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliografía de Referencia - Dra. Martina [Apellido]</title>
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo_circular_centrado.png" type="image/png">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="site-header" id="siteHeader">
+            <div class="header-inner">
+                <a href="index.html#inicio" class="site-logo">
+                    <img src="logo_circular_centrado.png" alt="Logo Dra. Martina">
+                </a>
+                <nav class="main-navigation" id="mainNav">
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#acerca-de-mi">Dra. Martina</a></li>
+                        <li><a href="index.html#recursos-academicos" class="active">Recursos</a></li> <!-- Marcamos Recursos como activo -->
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="articulos.html">Publicaciones</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-section"> <!-- Fondo por defecto: --crema-papiro -->
+                <div class="container-main">
+                    <header class="text-center reveal-on-scroll">
+                        <h1 class="internal-page-title">Biblioteca de Referencia</h1>
+                        <p class="internal-page-subtitle">Una selección curada de tratados fundamentales, obras de consulta y literatura científica esencial para la formación continua y la práctica médica de vanguardia.</p>
+                    </header>
+
+                    <div class="bibliography-list">
+                        <article class="bibliography-card reveal-on-scroll">
+                            <img src="Imagenes/libro1.jpg" alt="Portada del tratado Gray's Anatomy for Students" class="book-cover-image">
+                            <div class="book-details-content">
+                                <h3>Gray. Anatomía para Estudiantes</h3>
+                                <p class="book-description">Referencia exhaustiva y didáctica de la anatomía humana, indispensable para la comprensión morfológica y su aplicación clínica. Un pilar en la formación de todo profesional médico.</p>
+                                <a href="https://www.amazon.com/s?k=Gray%27s+Anatomy+for+Students" target="_blank" rel="noopener noreferrer" class="view-book-button">Consultar Editorial</a>
+                            </div>
+                        </article>
+
+                        <article class="bibliography-card reveal-on-scroll">
+                            <img src="Imagenes/libro2.jpg" alt="Portada del libro Junqueira's Basic Histology: Text and Atlas" class="book-cover-image">
+                            <div class="book-details-content">
+                                <h3>Junqueira. Histología Básica: Texto y Atlas</h3>
+                                <p class="book-description">Tratado fundamental para el estudio microscópico de los tejidos y órganos. Sus detalladas micrografías y correlaciones clínicas lo convierten en una herramienta invaluable.</p>
+                                <a href="https://www.amazon.com/s?k=Junqueira%27s+Basic+Histology" target="_blank" rel="noopener noreferrer" class="view-book-button">Consultar Editorial</a>
+                            </div>
+                        </article>
+
+                        <article class="bibliography-card reveal-on-scroll">
+                            <img src="Imagenes/libro3.jpg" alt="Portada del libro Campbell Biology" class="book-cover-image">
+                            <div class="book-details-content">
+                                <h3>Campbell. Biología</h3>
+                                <p class="book-description">Obra de referencia integral para los principios fundamentales de la biología celular, molecular y evolutiva, sentando las bases para la comprensión de la fisiopatología.</p>
+                                <a href="https://www.amazon.com/s?k=Campbell+Biology" target="_blank" rel="noopener noreferrer" class="view-book-button">Consultar Editorial</a>
+                            </div>
+                        </article>
+                        
+                        <article class="bibliography-card reveal-on-scroll">
+                            <!-- Ejemplo de libro adicional -->
+                            <img src="https://via.placeholder.com/200x300.png/1D2A3B/FDFBF5?text=Harrison" alt="Portada de Harrison's Principles of Internal Medicine" class="book-cover-image">
+                            <div class="book-details-content">
+                                <h3>Harrison. Principios de Medicina Interna</h3>
+                                <p class="book-description">Considerado el estándar de oro en medicina interna, este tratado ofrece una cobertura exhaustiva de la patogenia, diagnóstico y tratamiento de las enfermedades.</p>
+                                <a href="https://www.amazon.com/s?k=Harrison%27s+Principles+of+Internal+Medicine" target="_blank" rel="noopener noreferrer" class="view-book-button">Consultar Editorial</a>
+                            </div>
+                        </article>
+
+                        <!-- Añadir más libros aquí -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container-main">
+                <p class="dedication-footer reveal-on-scroll">Dedicado a la ciencia, el cuidado y la continua búsqueda del conocimiento.  Martina Matonte Cruzado</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> Martina Matonte Cruzado. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </div> <!-- .wrapper -->
+    <script src="script.js"></script>
+</body>
+</html>

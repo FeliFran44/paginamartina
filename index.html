@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina con Martina - Dra. Martina [Apellido]</title>
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo_circular_centrado.png" type="image/png">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="site-header" id="siteHeader">
+            <div class="header-inner">
+                <a href="#inicio" class="site-logo">
+                    <img src="logo_circular_centrado.png" alt="Logo Dra. Martina">
+                </a>
+                <nav class="main-navigation" id="mainNav">
+                    <ul>
+                        <li><a href="#inicio" class="active">Inicio</a></li>
+                        <li><a href="#acerca-de-mi">Dra. Martina</a></li>
+                        <li><a href="#recursos-academicos">Recursos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="articulos.html">Publicaciones</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section id="inicio" class="hero-section-master">
+                <div class="hero-slideshow-bg">
+                    <!-- REEMPLAZA ESTAS URLS CON TUS IMÁGENES -->
+                    <img src="https://images.pexels.com/photos/3992933/pexels-photo-3992933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Contexto médico profesional" class="hero-slide-bg active">
+                    <img src="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Investigación y ciencia médica" class="hero-slide-bg">
+                    <img src="https://images.pexels.com/photos/5452291/pexels-photo-5452291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cuidado y atención al paciente" class="hero-slide-bg">
+                    <img src="fondo1.jpg" alt="Cuidado y atención al paciente" class="hero-slide-bg">
+                 <img src="foto1.jpg" alt="Cuidado y atención al paciente" class="hero-slide-bg">
+                </div>
+                <div class="hero-content-master reveal-on-scroll">
+                    <h1>Medicina con Martina</h1>
+                    <p class="subtitle">Reflexiones, aprendizaje y vida universitaria</p>
+                    <a href="#acerca-de-mi" class="hero-cta-button">Mas sobre Martina</a>
+                </div>
+            </section>
+
+            <section id="acerca-de-mi" class="page-section"> <!-- Fondo por defecto: --crema-papiro -->
+                <div class="container-main">
+                    <div class="about-section-layout reveal-on-scroll">
+                        <div class="about-image-wrapper">
+                            <!-- REEMPLAZA CON LA RUTA A TU IMAGEN DE PERFIL -->
+                            <img src="marti doctora.jpg" alt="Dra. Martina [Apellido], especialista en [Su Especialidad]">
+                        </div>
+                        <div class="about-content">
+                            <h2>Estudiante Martina Matonte Cruzado</h2>
+                            <div class="hr-short-gold"></div>
+                            <p class="lead">Desde que tengo memoria, la medicina ha estado presente en mi vida, no solo como una profesión, sino como una forma de ser. Mi madre, Carolina Cruzado, es doctora y se ha especializado en cuidados paliativos. La he visto acompañar a personas en sus momentos más vulnerables con una calidez y una entrega que me marcaron profundamente. Ella no solo me enseñó sobre medicina: me enseñó sobre humanidad, empatía y respeto por la vida.</p>
+                            <p>Crecí admirando su capacidad para aliviar el dolor, para escuchar con paciencia y para estar presente incluso cuando ya no había más que hacer, excepto acompañar. Su ejemplo fue la semilla de lo que hoy soy: una estudiante de Medicina apasionada por el cuidado de los demás, enamorada del arte de sanar y profundamente comprometida con las personas.</p>
+                            <p>Hoy, estoy construyendo mi propio camino en la Facultad, con libros bajo el brazo, dudas en la cabeza, pero el corazón lleno de propósito. Esta página es mi manera de compartir ese recorrido, de conectar con quienes también sueñan con sanar y de honrar el legado de quienes me inspiraron a empezar.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recursos-academicos" class="page-section bg-azul-noche"> <!-- Clase para fondo oscuro -->
+                <div class="container-main text-center reveal-on-scroll">
+                    <h2 class="internal-page-title">Centro de Conocimiento</h2>
+                    <p class="internal-page-subtitle">Acceda a una curada selección de protocolos, investigaciones y literatura esencial para la práctica y el estudio médico avanzado.</p>
+                    <div class="resources-grid-premium">
+                        <a href="documentos.html" class="resource-card-premium">
+                            <span class="icon-premium">📁</span>
+                            <h3>Protocolos y Guías Clínicas</h3>
+                            <p class="description">Documentos estandarizados y directrices basadas en evidencia para la práctica clínica diaria.</p>
+                        </a>
+                        <a href="articulos.html" class="resource-card-premium">
+                            <span class="icon-premium">🔬</span>
+                            <h3>Investigación y Publicaciones</h3>
+                            <p class="description">Artículos científicos, estudios y contribuciones al avance del conocimiento médico.</p>
+                        </a>
+                        <a href="bibliografias.html" class="resource-card-premium">
+                            <span class="icon-premium">📚</span>
+                            <h3>Biblioteca de Referencia</h3>
+                            <p class="description">Textos fundamentales y obras de consulta indispensables en diversas especialidades médicas.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="page-section"> <!-- Fondo por defecto: --crema-papiro -->
+                <div class="container-main text-center reveal-on-scroll">
+                    <h2 class="internal-page-title">Contacto Profesional</h2>
+                    <p class="internal-page-subtitle">Para consultas, colaboraciones o segundas opiniones, por favor utilice el siguiente formulario.</p>
+                    <div class="contact-form-wrapper">
+                        <form id="contactFormProfessional" action="mailto:martina.profesional@ejemplo.com" method="post" enctype="text/plain">
+                            <div class="form-group">
+                                <label for="profName">Nombre Completo:</label>
+                                <input type="text" id="profName" name="nombre" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profEmail">Correo Electrónico:</label>
+                                <input type="email" id="profEmail" name="correo" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profSubject">Asunto:</label>
+                                <input type="text" id="profSubject" name="asunto" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profMessage">Mensaje:</label>
+                                <textarea id="profMessage" name="mensaje" class="form-control" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn-gold">Enviar Consulta</button>
+                        </form>
+                    </div>
+                    <div class="contact-social-links">
+                         <!-- <p>O conéctese a través de mis perfiles profesionales:</p> -->
+                         <!-- <a href="#" class="social-icon-link" aria-label="LinkedIn"><img src="Imagenes/linkedin-icon.svg" alt="LinkedIn"></a> -->
+                         <!-- <a href="#" class="social-icon-link" aria-label="ResearchGate"><img src="Imagenes/researchgate-icon.svg" alt="ResearchGate"></a> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container-main">
+                <p class="dedication-footer reveal-on-scroll">Dedicado a la ciencia, el cuidado y la continua búsqueda del conocimiento.  Martina Matonte Cruzado</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> Martina Matonte Cruzado. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </div> <!-- .wrapper -->
+    <script src="script.js"></script>
+</body>
+</html>

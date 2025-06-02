@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Académicos - Dra. Martina [Apellido]</title>
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo_circular_centrado.png" type="image/png">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="site-header" id="siteHeader">
+            <div class="header-inner">
+                <a href="index.html#inicio" class="site-logo"> <!-- Enlace al inicio de index.html -->
+                    <img src="logo_circular_centrado.png" alt="Logo Dra. Martina">
+                </a>
+                <nav class="main-navigation" id="mainNav">
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#acerca-de-mi">Dra. Martina</a></li>
+                        <li><a href="index.html#recursos-academicos" class="active">Recursos</a></li> <!-- Marcamos Recursos como activo -->
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="articulos.html">Publicaciones</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-section"> <!-- Fondo por defecto: --crema-papiro (controlado por JS para header) -->
+                <div class="container-main">
+                    <header class="text-center reveal-on-scroll">
+                        <h1 class="internal-page-title">Documentos Académicos</h1>
+                        <p class="internal-page-subtitle">Compendio de apuntes, guías de estudio y material de referencia, clasificado por ciclo académico para su consulta y descarga.</p>
+                    </header>
+
+                    <div class="semester-section reveal-on-scroll">
+                        <h2 class="docs-semester-title">Primer Ciclo Académico</h2>
+                        <div class="docs-grid">
+                            <div class="doc-card-item">
+                                <div> <!-- Contenedor para H3 y P para empujar el botón abajo -->
+                                    <h3>Fundamentos de Biología Celular</h3>
+                                    <p>Análisis detallado de la estructura y función celular, mecanismos moleculares y procesos vitales a nivel microscópico.</p>
+                                </div>
+                                <a href="#" class="doc-view-button">Consultar Documento</a>
+                            </div>
+                            <div class="doc-card-item">
+                                <div>
+                                    <h3>Principios de Histología y Embriología</h3>
+                                    <p>Estudio de la organización tisular del cuerpo humano y las etapas fundamentales del desarrollo embrionario.</p>
+                                </div>
+                                <a href="#" class="doc-view-button">Consultar Documento</a>
+                            </div>
+                            <!-- Añadir más documentos del primer ciclo aquí -->
+                        </div>
+                    </div>
+
+                    <hr class="hr-elegant reveal-on-scroll">
+
+                    <div class="semester-section reveal-on-scroll">
+                        <h2 class="docs-semester-title">Segundo Ciclo Académico</h2>
+                        <div class="docs-grid">
+                            <div class="doc-card-item">
+                                <div>
+                                    <h3>Anatomía Sistémica Avanzada</h3>
+                                    <p>Exploración exhaustiva de los sistemas orgánicos, sus interrelaciones y correlaciones clínico-anatómicas.</p>
+                                </div>
+                                <a href="#" class="doc-view-button">Consultar Documento</a>
+                            </div>
+                            <div class="doc-card-item">
+                                <div>
+                                    <h3>Bases de Fisiología Humana</h3>
+                                    <p>Comprensión de los mecanismos funcionales del organismo, desde el nivel celular hasta la integración sistémica.</p>
+                                </div>
+                                <a href="#" class="doc-view-button">Consultar Documento</a>
+                            </div>
+                            <!-- Añadir más documentos del segundo ciclo aquí -->
+                        </div>
+                    </div>
+                    
+                    <!-- Puedes añadir más secciones de semestre aquí -->
+
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container-main">
+                <p class="dedication-footer reveal-on-scroll">Dedicado a la ciencia, el cuidado y la continua búsqueda del conocimiento.  Martina Matonte Cruzado</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> Martina Matonte Cruzado. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </div> <!-- .wrapper -->
+    <script src="script.js"></script>
+</body>
+</html>

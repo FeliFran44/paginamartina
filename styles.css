@@ -1,0 +1,584 @@
+/* styles.css - ESTILO "CLÍNICA DE PRESTIGIO" - Header Siempre Flotante */
+:root {
+    --azul-noche: #1D2A3B;
+    --crema-papiro: #FDFBF5;
+    --dorado-prestigio: #B08D57; /* Un dorado más apagado y elegante */
+    --dorado-brillante-hover: #c9a675; /* Para hovers del dorado */
+    --gris-clinico: #D1D5DB;
+    --gris-carbon: #374151;
+    --blanco-puro: #FFFFFF;
+
+    --sombra-ligera: 0 2px 8px rgba(29, 42, 59, 0.05);
+    --sombra-media: 0 5px 15px rgba(29, 42, 59, 0.08);
+    --sombra-profunda-sutil: 0 8px 25px rgba(29, 42, 59, 0.07);
+
+
+    --border-radius-fino: 3px; /* Bordes muy sutiles */
+
+    --font-serif-titulos: 'Playfair Display', serif;
+    --font-sans-cuerpo: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --transition-suave-premium: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* Easing más refinado */
+}
+
+/* Reset y Configuración Global */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base para REM */
+    -webkit-text-size-adjust: 100%; /* Prevenir ajuste de zoom en iOS */
+}
+
+body {
+    font-family: var(--font-sans-cuerpo);
+    font-weight: 400;
+    line-height: 1.75; /* Interlineado amplio para confort visual */
+    color: var(--gris-carbon);
+    background-color: var(--crema-papiro); /* Fondo general */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* MUY IMPORTANTE */
+}
+
+.wrapper { /* Un contenedor general para algunas páginas si es necesario */
+    width: 100%;
+    overflow: hidden; /* Para animaciones o elementos que se salgan */
+}
+
+.container-main { /* Contenedor principal para el contenido de las páginas */
+    width: 92%;
+    max-width: 1280px; /* Contenido más amplio */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tipografía Jerárquica */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif-titulos);
+    color: var(--azul-noche);
+    margin-bottom: 0.6em; /* Espacio ajustado */
+    line-height: 1.25;
+    font-weight: 700; /* Títulos en bold */
+}
+
+h1 { font-size: 3rem; letter-spacing: -0.5px; } /* H1 imponente y refinado */
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; font-family: var(--font-sans-cuerpo); font-weight: 600; color: var(--azul-noche); } /* H4 más funcional */
+
+p {
+    margin-bottom: 1.5em;
+    max-width: 72ch; /* Ancho de línea óptimo para lectura */
+}
+p.lead { /* Párrafo introductorio destacado */
+    font-size: 1.15rem;
+    color: var(--azul-noche);
+    font-weight: 400;
+}
+
+a {
+    color: var(--dorado-prestigio); /* Enlaces con el toque dorado */
+    text-decoration: none;
+    transition: var(--transition-suave-premium);
+    font-weight: 500; /* Enlaces ligeramente destacados */
+}
+a:hover {
+    color: var(--azul-noche);
+    text-decoration: underline;
+    text-decoration-color: var(--dorado-prestigio);
+    text-underline-offset: 4px;
+}
+
+/* Línea Separadora Elegante */
+.hr-elegant {
+    border: 0;
+    height: 1px;
+    background-color: var(--gris-clinico);
+    margin: 3rem auto; /* Espaciado generoso */
+    width: 80%;
+    max-width: 400px;
+}
+.hr-short-gold {
+    border: 0;
+    height: 2px;
+    background-color: var(--dorado-prestigio);
+    margin: 1rem 0 1.5rem;
+    width: 60px;
+}
+
+
+/* Header y Navegación - SIEMPRE FLOTANTE */
+.site-header {
+    background-color: transparent; /* SIEMPRE TRANSPARENTE */
+    backdrop-filter: blur(10px); /* Efecto cristalino */
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+    padding: 1rem 0; /* Padding base */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid transparent; /* Borde inicialmente transparente */
+    transition: padding 0.3s ease, border-color 0.3s ease; /* Transición para padding y borde al hacer scroll leve */
+}
+
+/* Clase que se añadirá con JS cuando el header necesite un borde (ej. al hacer un poco de scroll) */
+.site-header.has-scrolled-thoda { /* "thoda" = un poco en Hindi, para un nombre único */
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(29, 42, 59, 0.08); /* Borde muy sutil */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1440px; /* Un poco más ancho */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-logo img {
+    height: 50px; /* Tamaño del logo ajustado */
+    transition: transform 0.3s ease, filter 0.3s ease, height 0.3s ease; /* Añadir filter y height a la transición */
+}
+.site-header.has-scrolled-thoda .site-logo img { /* Logo más pequeño al hacer scroll leve */
+    height: 40px;
+}
+
+
+/* Estilos para el logo y nav basados en el fondo de la sección actual (controlado por JS) */
+.site-header[data-theme="dark-bg"] .site-logo img {
+    filter: brightness(0) invert(1); /* Hace el logo blanco */
+}
+.site-header[data-theme="dark-bg"] .main-navigation a,
+.site-header[data-theme="dark-bg"] .mobile-menu-button {
+    color: var(--crema-papiro);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.site-header[data-theme="dark-bg"] .main-navigation a::after {
+    background-color: var(--dorado-prestigio);
+}
+.site-header[data-theme="dark-bg"] .main-navigation a.active,
+.site-header[data-theme="dark-bg"] .main-navigation a:hover {
+    color: var(--dorado-prestigio);
+}
+
+
+.site-header[data-theme="light-bg"] .site-logo img {
+    filter: none; /* Logo normal */
+}
+.site-header[data-theme="light-bg"] .main-navigation a,
+.site-header[data-theme="light-bg"] .mobile-menu-button {
+    color: var(--azul-noche);
+    text-shadow: none;
+}
+.site-header[data-theme="light-bg"] .main-navigation a::after {
+    background-color: var(--dorado-prestigio); /* Puede ser azul-noche también */
+}
+.site-header[data-theme="light-bg"] .main-navigation a.active,
+.site-header[data-theme="light-bg"] .main-navigation a:hover {
+    color: var(--dorado-prestigio);
+}
+
+
+.main-navigation ul { list-style: none; display: flex; }
+.main-navigation li { margin-left: 2.8rem; } /* Espaciado generoso */
+.main-navigation a {
+    font-family: var(--font-sans-cuerpo);
+    font-weight: 500;
+    letter-spacing: 0.9px; /* Ligeramente más espaciado */
+    text-transform: uppercase;
+    font-size: 0.85rem; /* Un poco más grande */
+    padding-bottom: 0.6rem;
+    position: relative;
+    text-decoration: none;
+    transition: color var(--transition-suave-premium);
+}
+.main-navigation a::after { /* Subrayado animado en hover */
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1.5px; transition: width 0.3s ease;
+}
+.main-navigation a:hover::after, .main-navigation a.active::after { width: 100%; }
+/* Los colores de active y hover se manejan con los atributos data-theme */
+
+.mobile-menu-button { /* Estilos base del botón */
+    display: none; background: none; border: none;
+    font-size: 1.6rem; cursor: pointer; padding: 0.5rem;
+    transition: color var(--transition-suave-premium);
+}
+
+
+/* Hero Section (#inicio) - Mantiene su propio fondo oscuro */
+.hero-section-master {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; background-color: var(--azul-noche);
+    padding-top: 0; padding-bottom: 80px;
+}
+.hero-slideshow-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+.hero-slide-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center; opacity: 0;
+    transition: opacity 2s ease-in-out;
+    filter: grayscale(50%) brightness(0.6) blur(3px);
+}
+.hero-slide-bg.active { opacity: 0.3; }
+
+.hero-content-master {
+    position: relative; z-index: 2; text-align: center;
+    color: var(--crema-papiro); padding: 0 20px;
+}
+.hero-content-master h1 {
+    font-size: 4rem; color: var(--crema-papiro); margin-bottom: 0.3em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.hero-content-master .subtitle {
+    font-family: var(--font-sans-cuerpo); font-size: 1.3rem; color: var(--gris-clinico);
+    margin-bottom: 2.5rem; max-width: 60ch; margin-left: auto; margin-right: auto;
+    font-weight: 300; letter-spacing: 0.5px;
+}
+.hero-cta-button {
+    font-family: var(--font-sans-cuerpo); background-color: transparent; color: var(--dorado-prestigio);
+    padding: 12px 30px; border-radius: var(--border-radius-fino); font-size: 0.9rem;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
+    border: 2px solid var(--dorado-prestigio); transition: var(--transition-suave-premium); display: inline-block;
+}
+.hero-cta-button:hover {
+    background-color: var(--dorado-prestigio); color: var(--azul-noche);
+    text-decoration: none; transform: translateY(-2px);
+}
+
+/* Estructura General de Secciones (después del hero) */
+.page-section {
+    padding: 100px 0; /* Padding generoso */
+    position: relative; /* Necesario para IntersectionObserver */
+}
+main > section:not(.hero-section-master):first-of-type {
+    padding-top: calc(100px + 70px); /* 100px padding de sección + ~70px altura del header (ajustar) */
+}
+
+
+.page-section.bg-azul-noche {
+    background-color: var(--azul-noche);
+    color: var(--crema-papiro);
+}
+.page-section.bg-azul-noche h1,
+.page-section.bg-azul-noche h2,
+.page-section.bg-azul-noche h3,
+.page-section.bg-azul-noche h4 { color: var(--crema-papiro); }
+.page-section.bg-azul-noche p { color: var(--gris-clinico); }
+.page-section.bg-azul-noche a { color: var(--dorado-prestigio); }
+.page-section.bg-azul-noche a:hover { color: var(--crema-papiro); }
+.page-section.bg-azul-noche .hr-short-gold { background-color: var(--crema-papiro); }
+
+
+/* Sección Acerca de Mí */
+.about-section-layout {
+    display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
+}
+.about-image-wrapper img {
+    border-radius: var(--border-radius-fino); box-shadow: var(--sombra-media);
+    max-width: 400px; margin: 0 auto;
+}
+.about-content h2 { margin-bottom: 0.2em; }
+
+/* SECCIÓN DE RECURSOS MEJORADA */
+.page-section#recursos-academicos {
+    background-color: var(--azul-noche); color: var(--crema-papiro);
+    padding: 100px 0 120px;
+}
+.page-section#recursos-academicos .internal-page-title,
+.page-section#recursos-academicos .internal-page-subtitle { color: var(--crema-papiro); }
+.page-section#recursos-academicos .internal-page-subtitle {
+    color: var(--gris-clinico); max-width: 70ch; margin-bottom: 4rem;
+}
+
+.resources-grid-premium {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+.resource-card-premium {
+    background-color: rgba(253, 251, 245, 0.05);
+    border: 1px solid rgba(176, 141, 87, 0.3);
+    color: var(--crema-papiro); padding: 2.5rem; border-radius: var(--border-radius-fino);
+    text-align: left; transition: var(--transition-suave-premium);
+    text-decoration: none !important; position: relative; overflow: hidden;
+}
+.resource-card-premium::before {
+    content: ''; position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(176, 141, 87, 0.15), transparent);
+    transition: left 0.6s ease;
+}
+.resource-card-premium:hover::before { left: 100%; }
+.resource-card-premium:hover {
+    transform: translateY(-8px) scale(1.02);
+    background-color: rgba(253, 251, 245, 0.08);
+    border-color: var(--dorado-prestigio);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.resource-card-premium .icon-premium {
+    font-size: 2.8rem; color: var(--dorado-prestigio);
+    margin-bottom: 1.2rem; display: block;
+}
+.resource-card-premium h3 {
+    font-family: var(--font-serif-titulos); font-size: 1.6rem;
+    color: var(--crema-papiro); margin-bottom: 0.5rem;
+}
+.resource-card-premium .description {
+    font-size: 0.95rem; color: var(--gris-clinico);
+    line-height: 1.6; margin-bottom: 0;
+}
+
+/* Formulario de Contacto */
+.contact-form-wrapper {
+    background-color: transparent; border: 1px solid rgba(29, 42, 59, 0.15);
+    padding: 3rem; border-radius: var(--border-radius-fino);
+    box-shadow: var(--sombra-media); max-width: 700px; margin: 2rem auto 0;
+}
+.form-group { margin-bottom: 1.8rem; }
+.form-group label {
+    display: block; font-family: var(--font-sans-cuerpo); font-weight: 600;
+    font-size: 0.9rem; color: var(--azul-noche); margin-bottom: 0.5rem;
+}
+.form-control {
+    width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--gris-clinico);
+    border-radius: var(--border-radius-fino); font-family: var(--font-sans-cuerpo);
+    font-size: 1rem; background-color: var(--blanco-puro); color: var(--gris-carbon);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-control:focus {
+    outline: none; border-color: var(--dorado-prestigio);
+    box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.2);
+}
+textarea.form-control { min-height: 150px; resize: vertical; }
+.submit-btn-gold {
+    font-family: var(--font-sans-cuerpo); background-color: var(--dorado-prestigio);
+    color: var(--crema-papiro); padding: 0.9rem 2rem; border-radius: var(--border-radius-fino);
+    font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    border: 2px solid var(--dorado-prestigio); transition: var(--transition-suave-premium);
+    cursor: pointer; width: 100%;
+}
+.submit-btn-gold:hover {
+    background-color: transparent; color: var(--dorado-prestigio); text-decoration: none;
+}
+.contact-social-links { text-align: center; margin-top: 2.5rem; }
+.contact-social-links .social-icon-link {
+    display: inline-block; margin: 0 0.8rem; color: var(--dorado-prestigio);
+    font-size: 1.5rem; opacity: 0.8;
+}
+.contact-social-links .social-icon-link:hover {
+    opacity: 1; transform: scale(1.1); color: var(--azul-noche);
+}
+.contact-social-links .social-icon-link img {
+    width: 30px; height: 30px;
+    filter: grayscale(50%) contrast(150%) brightness(80%);
+}
+.contact-social-links .social-icon-link:hover img { filter: none; }
+
+/* Footer */
+.site-footer {
+    background-color: var(--azul-noche); color: var(--gris-clinico);
+    padding: 4rem 0; text-align: center;
+}
+.dedication-footer {
+    font-family: var(--font-serif-titulos); font-style: italic; font-size: 1.1rem;
+    color: var(--crema-papiro); margin-bottom: 0.8rem; opacity: 0.9;
+}
+.site-footer p:last-child {
+    font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem; color: var(--gris-clinico);
+}
+
+/* Estilos específicos para Páginas Internas (Documentos, Artículos, Bibliografía) */
+.internal-page-title { text-align: center; margin-bottom: 1rem; }
+.internal-page-subtitle {
+    text-align: center; font-family: var(--font-sans-cuerpo); font-size: 1.1rem;
+    color: var(--gris-texto-secundario); margin-bottom: 3rem; max-width: 65ch;
+    margin-left: auto; margin-right: auto;
+}
+body:not(:has(main > .hero-section-master)) { /* Si no es la página de inicio */
+    background-color: var(--beige-muy-sutil);
+}
+body:not(:has(main > .hero-section-master)) .wrapper > main {
+    padding-top: 120px; /* Espacio para el header flotante en páginas internas, ajustar si es necesario */
+}
+
+
+/* Documentos (Tarjetas) */
+.docs-semester-title {
+    font-family: var(--font-sans-cuerpo); font-size: 1.5rem; font-weight: 600;
+    color: var(--azul-noche); margin-bottom: 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gris-clinico);
+}
+.docs-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; margin-bottom: 3rem;
+}
+.doc-card-item {
+    background-color: var(--blanco-puro); padding: 1.8rem; border-radius: var(--border-radius-fino);
+    box-shadow: var(--sombra-ligera); border: 1px solid var(--gris-clinico);
+    transition: var(--transition-suave-premium); display: flex; flex-direction: column;
+    justify-content: space-between;
+}
+.doc-card-item:hover {
+    transform: translateY(-5px); box-shadow: var(--sombra-media);
+    border-color: var(--dorado-prestigio);
+}
+.doc-card-item h3 {
+    font-family: var(--font-sans-cuerpo); font-size: 1.2rem; font-weight: 600;
+    margin-bottom: 0.5rem; color: var(--azul-noche); /* Ajustado */
+}
+.doc-card-item p {
+    font-size: 0.95rem; color: var(--gris-carbon); /* Ajustado */
+    margin-bottom: 1.5rem; flex-grow: 1;
+}
+.doc-view-button {
+    font-family: var(--font-sans-cuerpo); background-color: var(--dorado-prestigio);
+    color: var(--crema-papiro); padding: 0.6rem 1.2rem; border-radius: var(--border-radius-fino);
+    font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px;
+    border: 1px solid var(--dorado-prestigio); transition: var(--transition-suave-premium);
+    align-self: flex-start; text-decoration: none !important;
+}
+.doc-view-button:hover { background-color: transparent; color: var(--dorado-prestigio); }
+
+/* Artículos (Lista y Contenido) */
+.articles-list-container { max-width: 800px; margin: 0 auto; }
+.article-list-item {
+    background-color: var(--blanco-puro); margin-bottom: 2rem;
+    border-radius: var(--border-radius-fino); box-shadow: var(--sombra-ligera);
+    border: 1px solid var(--gris-clinico); transition: var(--transition-suave-premium);
+}
+.article-list-item:hover { transform: translateY(-4px); box-shadow: var(--sombra-media); }
+.article-list-item a {
+    display: block; padding: 2rem; color: var(--gris-carbon); text-decoration: none !important;
+}
+.article-list-item h2 { font-size: 1.6rem; margin-bottom: 0.3em; color: var(--azul-noche); } /* Ajustado */
+.article-list-item p { font-size: 1rem; color: var(--gris-texto-secundario); margin-bottom: 0.8em; }
+.read-article-link {
+    font-weight: 600; color: var(--dorado-prestigio); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.read-article-link:hover { color: var(--azul-noche); }
+
+.single-article-content {
+    background-color: var(--blanco-puro); padding: 2rem 2.5rem;
+    border-radius: var(--border-radius-fino); box-shadow: var(--sombra-ligera);
+    border: 1px solid var(--gris-clinico); max-width: 900px; margin: 40px auto;
+}
+.single-article-content .article-main-title { font-size: 2.8rem; margin-bottom: 0.5rem; color: var(--azul-noche); } /* Ajustado */
+.single-article-content .article-metadata {
+    font-family: var(--font-sans-cuerpo); font-size: 0.9rem;
+    color: var(--gris-texto-secundario); margin-bottom: 2rem;
+}
+.single-article-content .content-prose p {
+    font-size: 1.1rem; line-height: 1.8; max-width: none; color: var(--gris-carbon); /* Ajustado */
+}
+.single-article-content .content-prose h2,
+.single-article-content .content-prose h3 { margin-top: 2em; margin-bottom: 0.8em; color: var(--azul-noche); } /* Ajustado */
+
+/* Bibliografía (Tarjetas Horizontales) */
+.bibliography-card {
+    display: flex; flex-direction: column; background-color: var(--blanco-puro);
+    margin-bottom: 2rem; border-radius: var(--border-radius-fino);
+    box-shadow: var(--sombra-ligera); border: 1px solid var(--gris-clinico);
+    transition: var(--transition-suave-premium); overflow: hidden;
+}
+.bibliography-card:hover { transform: translateY(-5px); box-shadow: var(--sombra-media); }
+.book-cover-image {
+    width: 100%; max-height: 250px; object-fit: cover; object-position: center top;
+}
+.book-details-content { padding: 1.8rem; }
+.book-details-content h3 { font-size: 1.5rem; margin-bottom: 0.4em; color: var(--azul-noche); } /* Ajustado */
+.book-details-content .book-description {
+    font-size: 0.95rem; color: var(--gris-texto-secundario); margin-bottom: 1.5rem;
+}
+.view-book-button {
+    font-family: var(--font-sans-cuerpo); background-color: var(--dorado-prestigio);
+    color: var(--crema-papiro); padding: 0.6rem 1.2rem; border-radius: var(--border-radius-fino);
+    font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px;
+    border: 1px solid var(--dorado-prestigio); transition: var(--transition-suave-premium);
+    display: inline-block; text-decoration: none !important;
+}
+.view-book-button:hover { background-color: transparent; color: var(--dorado-prestigio); }
+
+/* Animaciones de Scroll (ScrollReveal) */
+.reveal-on-scroll {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+.site-footer .dedication-footer.is-visible { opacity: 0.9; transform: scale(1); }
+
+
+/* Media Queries (Responsividad) */
+@media (min-width: 768px) {
+    .about-section-layout {
+        grid-template-columns: 1fr 1.5fr; gap: 4rem;
+    }
+    .about-image-wrapper { text-align: left; }
+    .about-image-wrapper img { margin: 0; }
+    .about-content h2 { text-align: left; }
+    .about-content .hr-short-gold { margin-left: 0; }
+
+    .bibliography-card { flex-direction: row; }
+    .book-cover-image {
+        width: 200px; max-height: none; height: auto; object-fit: cover;
+    }
+    .book-details-content { flex-grow: 1; }
+}
+
+@media (max-width: 767px) {
+    html { font-size: 15px; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero-content-master h1 { font-size: 2.8rem; }
+    .hero-content-master .subtitle { font-size: 1.1rem; }
+
+    .site-header { padding: 0.8rem 0; }
+    .site-header.has-scrolled-thoda { padding: 0.8rem 0; }
+    .site-logo img { height: 40px !important; } /* Forzar tamaño en móvil */
+    .site-header.has-scrolled-thoda .site-logo img { height: 40px !important; }
+
+
+    .main-navigation {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background-color: var(--azul-noche); /* Fondo oscuro menú móvil */
+        border-top: 1px solid rgba(253, 251, 245, 0.1); /* Borde claro */
+        box-shadow: 0 5px 15px rgba(29, 42, 59, 0.1); padding: 1rem 0;
+    }
+    .main-navigation.is-open { display: block; }
+    .main-navigation ul { flex-direction: column; align-items: center; }
+    .main-navigation li { margin: 0; width: 100%; text-align: center; }
+    .main-navigation a {
+        display: block; padding: 1rem; width: 100%;
+        border-bottom: 1px solid rgba(253, 251, 245, 0.08); /* Separador claro */
+        font-size: 0.9rem; color: var(--crema-papiro); text-shadow: none;
+    }
+    .main-navigation li:last-child a { border-bottom: none; }
+    .main-navigation a::after { display: none; }
+    .main-navigation a.active {
+        background-color: rgba(253, 251, 245, 0.05); color: var(--dorado-prestigio);
+    }
+     .main-navigation a:hover {
+        background-color: rgba(253, 251, 245, 0.08); color: var(--dorado-prestigio);
+    }
+    .mobile-menu-button { display: block; }
+
+    .page-section { padding: 60px 0; }
+    main > section:not(.hero-section-master):first-of-type {
+      padding-top: calc(60px + 56px); /* ~56px altura header móvil */
+    }
+     body:not(:has(main > .hero-section-master)) .wrapper > main {
+        padding-top: 80px; /* Ajustado para móvil */
+    }
+    .internal-page-title { font-size: 2.2rem; }
+    .internal-page-subtitle { font-size: 1rem; margin-bottom: 2rem; }
+    .single-article-content { padding: 1.5rem; margin: 20px; }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones y Artículos - Dra. Martina [Apellido]</title>
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo_circular_centrado.png" type="image/png">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="site-header" id="siteHeader">
+            <div class="header-inner">
+                <a href="index.html#inicio" class="site-logo">
+                    <img src="logo_circular_centrado.png" alt="Logo Dra. Martina">
+                </a>
+                <nav class="main-navigation" id="mainNav">
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#acerca-de-mi">Dra. Martina</a></li>
+                        <li><a href="index.html#recursos-academicos">Recursos</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="articulos.html" class="active">Publicaciones</a></li> <!-- Marcamos Publicaciones como activo -->
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-section"> <!-- Fondo por defecto: --crema-papiro -->
+                <div class="container-main">
+                    <header class="text-center reveal-on-scroll">
+                        <h1 class="internal-page-title">Publicaciones y Artículos</h1>
+                        <p class="internal-page-subtitle">Una selección de artículos, ensayos y reflexiones sobre la práctica médica, avances científicos y la dimensión humana de la salud.</p>
+                    </header>
+
+                    <div class="articles-list-container">
+                        <article class="article-list-item reveal-on-scroll">
+                            <a href="articulos/primer-articulo.html">
+                                <h2>Reflexiones Inaugurales: El Juramento Hipocrático en el Siglo XXI</h2>
+                                <p>Un análisis contemporáneo de los principios éticos fundamentales que guían la profesión médica, explorando su relevancia y desafíos en la era tecnológica.</p>
+                                <span class="read-article-link">Leer Artículo Completo →</span>
+                            </a>
+                        </article>
+
+                        <article class="article-list-item reveal-on-scroll">
+                            <a href="#"> <!-- Enlace al futuro artículo -->
+                                <h2>La Intersección de la Inteligencia Artificial y el Diagnóstico Clínico</h2>
+                                <p>Perspectivas sobre el potencial transformador de la IA en la precisión diagnóstica y los dilemas éticos emergentes para el profesional de la salud.</p>
+                                <span class="read-article-link">Próximamente →</span>
+                            </a>
+                        </article>
+                        
+                        <article class="article-list-item reveal-on-scroll">
+                            <a href="#"> <!-- Enlace al futuro artículo -->
+                                <h2>Humanismo en la Medicina: Más Allá de la Técnica</h2>
+                                <p>La importancia de la empatía, la comunicación efectiva y la comprensión integral del paciente como pilares insustituibles del cuidado médico de excelencia.</p>
+                                <span class="read-article-link">Próximamente →</span>
+                            </a>
+                        </article>
+
+                        <!-- Añadir más artículos aquí -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container-main">
+                <p class="dedication-footer reveal-on-scroll">Dedicado a la ciencia, el cuidado y la continua búsqueda del conocimiento.  Martina Matonte Cruzado</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> Martina Matonte Cruzado. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </div> <!-- .wrapper -->
+    <script src="script.js"></script>
+</body>
+</html>
